@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Relationship
+  summary: "Get related relationships for vertex with specific id"
+  operationId: findRelatedRelationshipsForVertex
+  parameters:
+    - $ref: "#/components/parameters/VertexIdQueryParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RelatedRelationshipsTO"
+      description: "Related relationships for vertex with specific id"

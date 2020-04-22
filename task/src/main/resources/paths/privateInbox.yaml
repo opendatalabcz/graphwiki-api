@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Task
+  summary: "Get private inbox tasks for current user"
+  operationId: privateInbox
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TaskTO'
+      description: "Private inbox tasks"

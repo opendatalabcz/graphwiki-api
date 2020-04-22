@@ -1,0 +1,7 @@
+RQ_CreateTaskTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateTaskTO"
+  description: "New task value"

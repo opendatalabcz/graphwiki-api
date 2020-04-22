@@ -1,0 +1,53 @@
+VertexIdPathParam:
+  in: path
+  name: vertexId
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "vertex id"
+
+VertexIdQueryParam:
+  in: query
+  name: vertexId
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "vertex id"
+
+GraphEntityIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "graph entity id"
+
+ComplaintIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "complaint id"
+
+EntityRequestIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "entity request id"
+
+GraphEntityIdQueryParam:
+  in: query
+  name: entityId
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "graph entity id"

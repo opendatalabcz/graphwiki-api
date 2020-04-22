@@ -1,0 +1,52 @@
+type: "object"
+required:
+  - id
+  - author
+  - created
+  - title
+  - explanation
+  - state
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  assignee:
+    $ref: "#/components/schemas/LinkTO"
+  title:
+    type: "string"
+    maxLength: 50
+  explanation:
+    type: "string"
+    maxLength: 200
+  state:
+    $ref: "#/components/schemas/ComplaintState"
+  links:
+    type: "object"
+    required:
+      - self
+      - entity
+      - related
+      - commentList
+    properties:
+      self:
+        $ref: "#/components/schemas/LinkTO"
+      approve:
+        $ref: "#/components/schemas/LinkTO"
+      reject:
+        $ref: "#/components/schemas/LinkTO"
+      entity:
+        $ref: "#/components/schemas/LinkTO"
+      related:
+        $ref: "#/components/schemas/LinkTO"
+      commentList:
+        $ref: "#/components/schemas/LinkTO"
+      commentCreate:
+        $ref: "#/components/schemas/LinkTO"
+      task:
+        $ref: "#/components/schemas/LinkTO"

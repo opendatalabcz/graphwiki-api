@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Relationship
+  summary: "Get relationship with specific id"
+  operationId: findRelationshipById
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      content:
+        application/vnd.cz.gregetom.graphwiki.relationship+json:
+          schema:
+            $ref: "#/components/schemas/RelationshipTO"
+      description: "Relationship with specific id"
+
+put:
+  tags:
+    - Relationship
+  summary: "Update relationship with specific id"
+  operationId: updateRelationship
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateRelationshipTO"
+  responses:
+    '200':
+      description: "Relationship updated"
+
+delete:
+  tags:
+    - Relationship
+  summary: "Delete relationship with specific id"
+  operationId: deleteRelationship
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      description: "Relationship deleted"

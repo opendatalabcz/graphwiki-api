@@ -1,0 +1,18 @@
+put:
+  tags:
+    - Task
+  summary: "Assign task with specific id"
+  operationId: assign
+  parameters:
+    - $ref: "#/components/parameters/TaskIdPathParam"
+    - in: query
+      name: assignee
+      schema:
+        type: string
+        maxLength: 50
+      description: "assignee id"
+  responses:
+    '200':
+      description: "Task assigned"
+    '422':
+      description: "Task is already assigned or finished"

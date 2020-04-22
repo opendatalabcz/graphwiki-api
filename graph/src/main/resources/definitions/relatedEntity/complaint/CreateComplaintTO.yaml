@@ -1,0 +1,11 @@
+type: "object"
+required:
+  - title
+  - explanation
+properties:
+  title:
+    type: "string"
+    maxLength: 50
+  explanation:
+    type: "string"
+    maxLength: 200

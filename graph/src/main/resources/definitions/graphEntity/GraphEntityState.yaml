@@ -1,0 +1,7 @@
+type: string
+enum:
+  - CONCEPT
+  - ACTIVE
+  - REJECTED
+  - REVOKED
+  - DELETED

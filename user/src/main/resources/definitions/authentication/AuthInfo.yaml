@@ -1,0 +1,20 @@
+type: "object"
+required:
+  - id
+  - givenName
+  - familyName
+  - email
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  givenName:
+    type: "string"
+    maxLength: 50
+  familyName:
+    maxLength: 50
+    type: "string"
+  email:
+    minLength: 5
+    maxLength: 50
+    type: "string"

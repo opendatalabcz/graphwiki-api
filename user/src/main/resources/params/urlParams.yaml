@@ -1,0 +1,8 @@
+UserIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "user id"

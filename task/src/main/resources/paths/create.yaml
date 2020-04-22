@@ -1,0 +1,10 @@
+post:
+  tags:
+    - Task
+  summary: "Create task"
+  operationId: create
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateTaskTO"
+  responses:
+    '200':
+      description: "Task created"

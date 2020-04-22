@@ -1,0 +1,16 @@
+post:
+  tags:
+    - Authentication
+  summary: "Authenticate user"
+  operationId: authenticate
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_AuthRequest"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/AuthResponse'
+      description: "Auth info and generated JWT token"
+    '401':
+      description: "Authentication failed"

@@ -1,0 +1,18 @@
+put:
+  tags:
+    - EntityRequest
+  summary: "Change state of entity request with specific id"
+  operationId: entityRequestStateTransition
+  parameters:
+    - $ref: "#/components/parameters/EntityRequestIdPathParam"
+    - in: query
+      name: nextState
+      required: true
+      schema:
+        $ref: "#/components/schemas/EntityRequestState"
+      description: "Next state"
+  responses:
+    '200':
+      description: "Entity request state changed"
+    '422':
+      description: "Current user is not an assignee"

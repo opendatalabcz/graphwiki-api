@@ -1,0 +1,33 @@
+type: "object"
+required:
+  - id
+  - author
+  - created
+  - text
+  - replies
+  - links
+properties:
+  id:
+    type: "string"
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  text:
+    type: "string"
+    maxLength: 200
+  replies:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/CommentTO"
+  links:
+    type: "object"
+    properties:
+      reply:
+        $ref: "#/components/schemas/LinkTO"
+      update:
+        $ref: "#/components/schemas/LinkTO"
+      _delete:
+        $ref: "#/components/schemas/LinkTO"
+

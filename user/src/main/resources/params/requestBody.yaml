@@ -1,0 +1,15 @@
+RQ_CreateUserTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateUserTO"
+  description: "New user value"
+
+RQ_AuthRequest:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/AuthRequest"
+  description: "Auth request value"

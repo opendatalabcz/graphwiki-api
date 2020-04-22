@@ -1,0 +1,12 @@
+get:
+  tags:
+    - User
+  summary: "Get logged user"
+  operationId: loggedUser
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserTO'
+      description: "Logged user"

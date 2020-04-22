@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Complaint
+  summary: "Get related complaints for graph entity with specific id"
+  operationId: findRelatedComplaintsByEntityId
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdQueryParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RelatedComplaintsTO"
+      description: "Related complaints for graph entity with specific id"

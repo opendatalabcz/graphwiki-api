@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Company
+  summary: "Create company"
+  operationId: createCompany
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateCompanyTO"
+  responses:
+    '201':
+      headers:
+        Location:
+          schema:
+            type: string
+          description: "Location of created company"
+      description: "Company created"

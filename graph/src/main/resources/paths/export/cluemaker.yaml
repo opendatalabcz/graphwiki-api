@@ -1,0 +1,20 @@
+get:
+  tags:
+    - Export
+  summary: "Export graph with root vertex with specific id in ClueMaker format"
+  operationId: exportClueMaker
+  parameters:
+    - $ref: "#/components/parameters/VertexIdQueryParam"
+  responses:
+    '200':
+      headers:
+        Content-Disposition:
+          schema:
+            type: string
+          description: "Contains filename"
+      content:
+        application/zip:
+          schema:
+            type: string
+            format: binary
+      description: "ClueMaker archive containing required graph"

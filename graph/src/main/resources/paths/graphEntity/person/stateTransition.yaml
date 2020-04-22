@@ -1,0 +1,16 @@
+put:
+  tags:
+    - Person
+  summary: "Change state of person with specific id"
+  operationId: personStateTransition
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+    - in: query
+      name: nextState
+      required: true
+      schema:
+        $ref: "#/components/schemas/GraphEntityState"
+      description: "Next state"
+  responses:
+    '200':
+      description: "Person state changed"

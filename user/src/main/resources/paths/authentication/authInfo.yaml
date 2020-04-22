@@ -1,0 +1,13 @@
+get:
+  tags:
+    - Authentication
+  summary: "Get auth info of current user, otherwise empty"
+  operationId: authInfo
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            nullable: true
+            $ref: '#/components/schemas/AuthInfo'
+      description: "Current user auth info, otherwise empty"

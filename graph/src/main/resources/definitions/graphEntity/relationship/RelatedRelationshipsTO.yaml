@@ -1,0 +1,13 @@
+type: "object"
+required:
+  - incoming
+  - outgoing
+properties:
+  incoming:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/RelationshipTO"
+  outgoing:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/RelationshipTO"

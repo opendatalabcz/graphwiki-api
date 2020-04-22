@@ -1,0 +1,190 @@
+openapi: 3.0.0
+info:
+  title: "GraphWiki - graph service API"
+  description: "GraphWiki - API definition for graph-service"
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8060/graph-service
+    description: Local backend
+  - url: http://localhost:9060/graph-service
+    description: Remote backend
+
+paths:
+  /entry/actions:
+    $ref: "paths/entry/entryActions.yaml"
+
+  /search:
+    $ref: "paths/search/fulltextSearch.yaml"
+
+  /graph:
+    $ref: "paths/graph/graph.yaml"
+  /graph/vertex/{vertexId}:
+    $ref: "paths/graph/vertexById.yaml"
+
+  /graph/export-graphml:
+    $ref: "paths/export/graphml.yaml"
+  /graph/export-cluemaker:
+    $ref: "paths/export/cluemaker.yaml"
+
+  /graph-entity/person:
+    $ref: "paths/graphEntity/person/create.yaml"
+  /graph-entity/person/{id}:
+    $ref: "paths/graphEntity/person/byId.yaml"
+  /graph-entity/person/{id}/state:
+    $ref: "paths/graphEntity/person/stateTransition.yaml"
+
+  /graph-entity/company:
+    $ref: "paths/graphEntity/company/create.yaml"
+  /graph-entity/company/{id}:
+    $ref: "paths/graphEntity/company/byId.yaml"
+  /graph-entity/company/{id}/state:
+    $ref: "paths/graphEntity/company/stateTransition.yaml"
+
+  /graph-entity/relationship:
+    $ref: "paths/graphEntity/relationship/create.yaml"
+  /graph-entity/relationship/{id}:
+    $ref: "paths/graphEntity/relationship/byId.yaml"
+  /graph-entity/relationship/{id}/state:
+    $ref: "paths/graphEntity/relationship/stateTransition.yaml"
+  /graph-entity/relationships:
+    $ref: "paths/graphEntity/relationship/forVertex.yaml"
+
+  /entity-request/{id}:
+    $ref: "paths/relatedEntity/entityRequest/byId.yaml"
+  /entity-request/{id}/state:
+    $ref: "paths/relatedEntity/entityRequest/stateTransition.yaml"
+  /entity-request/{id}/assignment:
+    $ref: "paths/relatedEntity/entityRequest/assign.yaml"
+
+  /complaint:
+    $ref: "paths/relatedEntity/complaint/create.yaml"
+  /complaint/{id}:
+    $ref: "paths/relatedEntity/complaint/byId.yaml"
+  /complaint/{id}/related:
+    $ref: "paths/relatedEntity/complaint/related.yaml"
+  /complaint/{id}/state:
+    $ref: "paths/relatedEntity/complaint/stateTransition.yaml"
+  /complaint/{id}/assignment:
+    $ref: "paths/relatedEntity/complaint/assign.yaml"
+  /complaints:
+    $ref: "paths/relatedEntity/complaint/byEntity.yaml"
+
+  /history:
+    $ref: "paths/history/byEntity.yaml"
+
+
+components:
+  parameters:
+    $ref: "params/urlParams.yaml"
+  requestBodies:
+    $ref: "params/requestBody.yaml"
+
+
+  schemas:
+    # SEARCH
+    SearchResult:
+      $ref: "definitions/search/SearchResult.yaml"
+    SearchPersonRecord:
+      $ref: "definitions/search/SearchPersonRecord.yaml"
+    SearchCompanyRecord:
+      $ref: "definitions/search/SearchCompanyRecord.yaml"
+
+
+    # GRAPH
+    GraphTO:
+      $ref: "definitions/graph/GraphTO.yaml"
+    VertexTO:
+      $ref: "definitions/graph/vertex/VertexTO.yaml"
+    VertexType:
+      $ref: "definitions/graph/vertex/VertexType.yaml"
+    EdgeTO:
+      $ref: "definitions/graph/edge/EdgeTO.yaml"
+
+
+    # GRAPH_ENTITY
+    GraphEntityTO:
+      $ref: "definitions/graphEntity/GraphEntityTO.yaml"
+    GraphEntityType:
+      $ref: "definitions/graphEntity/GraphEntityType.yaml"
+    GraphEntityState:
+      $ref: "definitions/graphEntity/GraphEntityState.yaml"
+
+
+    # PERSON
+    CreatePersonTO:
+      $ref: "definitions/graphEntity/person/CreatePersonTO.yaml"
+    PersonTO:
+      $ref: "definitions/graphEntity/person/PersonTO.yaml"
+    PersonTOLinks:
+      $ref: "definitions/graphEntity/person/PersonTOLinks.yaml"
+    Gender:
+      $ref: "definitions/graphEntity/person/Gender.yaml"
+
+
+    # COMPANY
+    CreateCompanyTO:
+      $ref: "definitions/graphEntity/company/CreateCompanyTO.yaml"
+    CompanyTO:
+      $ref: "definitions/graphEntity/company/CompanyTO.yaml"
+    CompanyTOLinks:
+      $ref: "definitions/graphEntity/company/CompanyTOLinks.yaml"
+    AddressTO:
+      $ref: "definitions/graphEntity/company/AddressTO.yaml"
+
+
+    # RELATIONSHIP
+    CreateRelationshipTO:
+      $ref: "definitions/graphEntity/relationship/CreateRelationshipTO.yaml"
+    RelationshipTO:
+      $ref: "definitions/graphEntity/relationship/RelationshipTO.yaml"
+    RelationshipTOLinks:
+      $ref: "definitions/graphEntity/relationship/RelationshipTOLinks.yaml"
+    RelatedRelationshipsTO:
+      $ref: "definitions/graphEntity/relationship/RelatedRelationshipsTO.yaml"
+    RelationshipType:
+      $ref: "definitions/graphEntity/relationship/RelationshipType.yaml"
+
+
+    # COMPLAINT
+    ComplaintSetupTO:
+      $ref: "definitions/relatedEntity/complaint/ComplaintSetupTO.yaml"
+    ComplaintState:
+      $ref: "definitions/relatedEntity/complaint/ComplaintState.yaml"
+    ComplaintTO:
+      $ref: "definitions/relatedEntity/complaint/ComplaintTO.yaml"
+    CreateComplaintTO:
+      $ref: "definitions/relatedEntity/complaint/CreateComplaintTO.yaml"
+    RelatedComplaintsTO:
+      $ref: "definitions/relatedEntity/complaint/RelatedComplaintsTO.yaml"
+
+
+    # HISTORY
+    HistoryTO:
+      $ref: "definitions/history/HistoryTO.yaml"
+    HistoryType:
+      $ref: "definitions/history/HistoryType.yaml"
+
+
+    # ENTITY REQUEST
+    EntityRequestState:
+      $ref: "definitions/relatedEntity/entityRequest/EntityRequestState.yaml"
+    EntityRequestTO:
+      $ref: "definitions/relatedEntity/entityRequest/EntityRequestTO.yaml"
+
+
+    ApplicationEntryActions:
+      $ref: "definitions/ApplicationEntryActions.yaml"
+    LinkTO:
+      $ref: "definitions/LinkTO.yaml"
+    Country:
+      $ref: "definitions/Country.yaml"
+
+
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Access token is required for specific resources
+security:
+  - JWT: []

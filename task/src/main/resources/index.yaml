@@ -1,0 +1,59 @@
+openapi: 3.0.0
+info:
+  title: "GraphWiki - task service API"
+  description: "GraphWiki - API definition for task-service"
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8090/task-service
+    description: Local backend
+  - url: http://localhost:9090/task-service
+    description: Remote backend
+
+paths:
+  /entry/actions:
+    $ref: "paths/entry/entryActions.yaml"
+
+  /task:
+    $ref: "paths/create.yaml"
+  /task/{id}:
+    $ref: "paths/byId.yaml"
+  /task/{id}/assignment:
+    $ref: "paths/assign.yaml"
+  /tasks/open:
+    $ref: "paths/openTaskCount.yaml"
+  /tasks/inbox/private:
+    $ref: "paths/privateInbox.yaml"
+  /tasks/inbox/team:
+    $ref: "paths/teamInbox.yaml"
+
+components:
+  parameters:
+    $ref: "params/urlParams.yaml"
+  requestBodies:
+    $ref: "params/requestBody.yaml"
+
+
+  schemas:
+    CreateTaskTO:
+      $ref: "definitions/task/CreateTaskTO.yaml"
+    TaskTO:
+      $ref: "definitions/task/TaskTO.yaml"
+    TaskState:
+      $ref: "definitions/task/TaskState.yaml"
+    TaskType:
+      $ref: "definitions/task/TaskType.yaml"
+
+    LinkTO:
+      $ref: "definitions/LinkTO.yaml"
+    ApplicationEntryActions:
+      $ref: "definitions/ApplicationEntryActions.yaml"
+
+
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Access token is required for specific resources
+security:
+  - JWT: []

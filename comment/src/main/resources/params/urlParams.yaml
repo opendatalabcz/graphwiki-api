@@ -1,0 +1,17 @@
+CommentIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "comment id"
+
+RelatedEntityIdQueryParam:
+  in: query
+  name: entityId
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "related entity id"

@@ -1,0 +1,26 @@
+allOf:
+  - $ref: '#/components/schemas/GraphEntityTO'
+  - type: "object"
+    required:
+      - officialName
+      - registrationNumber
+      - headquarters
+      - industry
+      - links
+    properties:
+      officialName:
+        type: "string"
+        maxLength: 50
+      registrationNumber:
+        type: "string"
+        maxLength: 50
+      headquarters:
+        $ref: "#/components/schemas/AddressTO"
+      industry:
+        type: "string"
+        maxLength: 50
+      inception:
+        type: "string"
+        format: "date"
+      links:
+        $ref: "#/components/schemas/CompanyTOLinks"

@@ -1,0 +1,16 @@
+get:
+  tags:
+    - History
+  summary: "Get history for graph entity with specific id"
+  operationId: findAllByEntityId
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdQueryParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/HistoryTO"
+      description: "History for graph entity with specific id"

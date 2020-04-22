@@ -1,0 +1,45 @@
+post:
+  tags:
+    - Comment
+  summary: "Reply to comment with specific id"
+  operationId: reply
+  parameters:
+    - $ref: "#/components/parameters/CommentIdPathParam"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateCommentTO"
+  responses:
+    '201':
+      headers:
+        Location:
+          schema:
+            type: string
+          description: "Url to comments for related entity"
+      description: "Reply comment created"
+
+put:
+  tags:
+    - Comment
+  summary: "Update comment by id"
+  operationId: update
+  parameters:
+    - $ref: "#/components/parameters/CommentIdPathParam"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CommentTO"
+  responses:
+    '200':
+      description: "Comment updated"
+    '422':
+      description: "Cannot update comment, current user is not its author"
+
+delete:
+  tags:
+    - Comment
+  summary: "Delete comment by id"
+  operationId: delete
+  parameters:
+    - $ref: "#/components/parameters/CommentIdPathParam"
+  responses:
+    '200':
+      description: "Comment deleted"
+    '422':
+      description: "Cannot delete comment, current user is not its author"

@@ -1,0 +1,23 @@
+type: "object"
+required:
+  - id
+  - author
+  - created
+  - type
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  type:
+    $ref: "#/components/schemas/HistoryType"
+  previousState:
+    $ref: "#/components/schemas/GraphEntityState"
+  currentState:
+    $ref: "#/components/schemas/GraphEntityState"
+  relatedEntity:
+    $ref: "#/components/schemas/LinkTO"

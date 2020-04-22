@@ -1,0 +1,30 @@
+type: "object"
+required:
+  - anyDataAvailable
+  - personsCount
+  - persons
+  - companiesCount
+  - companies
+  - links
+properties:
+  anyDataAvailable:
+    type: boolean
+  personsAvailableCount:
+    type: integer
+    format: int64
+  persons:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/SearchPersonRecord"
+  companiesAvailableCount:
+    type: integer
+    format: int64
+  companies:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/SearchCompanyRecord"
+  links:
+    type: "object"
+    properties:
+      nextPage:
+        $ref: "#/components/schemas/LinkTO"

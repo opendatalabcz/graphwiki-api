@@ -1,0 +1,47 @@
+get:
+  tags:
+    - Complaint
+  summary: "Get complaint setup for graph entity with specific id"
+  operationId: complaintSetup
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdQueryParam"
+    - in: query
+      name: entityType
+      required: true
+      schema:
+        $ref: "#/components/schemas/GraphEntityType"
+      description: "graph entity type"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ComplaintSetupTO"
+      description: "Complaint setup for graph entity with specific id"
+
+
+post:
+  tags:
+    - Complaint
+  summary: "Create complaint for graph entity with specific id"
+  operationId: createComplaint
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdQueryParam"
+    - in: query
+      name: entityType
+      required: true
+      schema:
+        $ref: "#/components/schemas/GraphEntityType"
+      description: "graph entity type"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateComplaintTO"
+  responses:
+    '201':
+      headers:
+        Location:
+          schema:
+            type: string
+          description: "Location of created complaint"
+      description: "Complaint created"
+    '422':
+      description: "Related graph entity is not active"

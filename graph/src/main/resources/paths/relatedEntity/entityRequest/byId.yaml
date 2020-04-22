@@ -1,0 +1,14 @@
+get:
+  tags:
+    - EntityRequest
+  summary: "Get entity request with specific id"
+  operationId: findEntityRequestById
+  parameters:
+    - $ref: "#/components/parameters/EntityRequestIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/EntityRequestTO"
+      description: "Entity request with specific id"

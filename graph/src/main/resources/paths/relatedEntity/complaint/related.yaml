@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Complaint
+  summary: "Get related complaints for complaint with specific id"
+  operationId: findRelatedComplaintsByComplaintId
+  parameters:
+    - $ref: "#/components/parameters/ComplaintIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/RelatedComplaintsTO"
+      description: "Related complaints for complaint with specific id"

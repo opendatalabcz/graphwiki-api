@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Complaint
+  summary: "Get complaint with specific id"
+  operationId: findComplaintById
+  parameters:
+    - $ref: "#/components/parameters/ComplaintIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ComplaintTO"
+      description: "Complaint with specific id"

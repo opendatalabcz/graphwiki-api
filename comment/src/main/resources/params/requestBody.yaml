@@ -1,0 +1,15 @@
+RQ_CreateCommentTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateCommentTO"
+  description: "New comment value"
+
+RQ_CommentTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CommentTO"
+  description: "Updated comment value"

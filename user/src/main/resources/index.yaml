@@ -1,0 +1,63 @@
+openapi: 3.0.0
+info:
+  title: "GraphWiki - user service API"
+  description: "GraphWiki - API definition for user-service"
+  version: "1.0.0"
+servers:
+  - url: http://localhost:8050/user-service
+    description: Local backend
+  - url: http://localhost:9050/user-service
+    description: Remote backend
+
+paths:
+  /entry/actions:
+    $ref: "paths/entry/entryActions.yaml"
+
+  /user:
+    $ref: "paths/user/create.yaml"
+  /user/{id}:
+    $ref: "paths/user/byId.yaml"
+  /user/logged:
+    $ref: "paths/user/logged.yaml"
+  /user/validation:
+    $ref: "paths/user/validation.yaml"
+  /authenticate:
+    $ref: "paths/authentication/authenticate.yaml"
+# not mapped because of required nullable response type
+#  /auth/info:
+#    $ref: "paths/authentication/authInfo.yaml"
+
+
+components:
+  parameters:
+    $ref: "params/urlParams.yaml"
+  requestBodies:
+    $ref: "params/requestBody.yaml"
+
+
+  schemas:
+    AuthInfo:
+      $ref: "definitions/authentication/AuthInfo.yaml"
+    AuthResponse:
+      $ref: "definitions/authentication/AuthResponse.yaml"
+    AuthRequest:
+      $ref: "definitions/authentication/AuthRequest.yaml"
+    CreateUserTO:
+      $ref: "definitions/user/CreateUserTO.yaml"
+    UserTO:
+      $ref: "definitions/user/UserTO.yaml"
+
+    LinkTO:
+      $ref: "definitions/LinkTO.yaml"
+    ApplicationEntryActions:
+      $ref: "definitions/ApplicationEntryActions.yaml"
+
+
+  securitySchemes:
+    JWT:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Access token is required for specific resources
+security:
+  - JWT: []

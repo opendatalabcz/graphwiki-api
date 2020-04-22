@@ -1,0 +1,17 @@
+type: "object"
+required:
+  - authInfo
+  - authenticate
+  - register
+  - userValidation
+properties:
+  authenticate:
+    $ref: "#/components/schemas/LinkTO"
+  authInfo:
+    $ref: "#/components/schemas/LinkTO"
+  register:
+    $ref: "#/components/schemas/LinkTO"
+  loggedUser:
+    $ref: "#/components/schemas/LinkTO"
+  userValidation:
+    $ref: "#/components/schemas/LinkTO"

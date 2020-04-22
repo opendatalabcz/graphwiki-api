@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Person
+  summary: "Get person with specific id"
+  operationId: findPersonById
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      content:
+        application/vnd.cz.gregetom.graphwiki.person+json:
+          schema:
+            $ref: "#/components/schemas/PersonTO"
+      description: "Person with specific id"
+
+put:
+  tags:
+    - Person
+  summary: "Update person with specific id"
+  operationId: updatePerson
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreatePersonTO"
+  responses:
+    '200':
+      description: "Person updated"
+
+delete:
+  tags:
+    - Person
+  summary: "Delete person with specific id"
+  operationId: deletePerson
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      description: "Person deleted"

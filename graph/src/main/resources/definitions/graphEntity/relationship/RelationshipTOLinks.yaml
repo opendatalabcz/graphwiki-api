@@ -1,0 +1,20 @@
+type: "object"
+required:
+  - self
+  - complaintList
+  - history
+properties:
+  self:
+    $ref: "#/components/schemas/LinkTO"
+  update:
+    $ref: "#/components/schemas/LinkTO"
+  _delete:
+    $ref: "#/components/schemas/LinkTO"
+  restore:
+    $ref: "#/components/schemas/LinkTO"
+  complaintCreate:
+    $ref: "#/components/schemas/LinkTO"
+  complaintList:
+    $ref: "#/components/schemas/LinkTO"
+  history:
+    $ref: "#/components/schemas/LinkTO"

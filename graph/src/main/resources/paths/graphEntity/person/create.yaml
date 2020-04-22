@@ -1,0 +1,15 @@
+post:
+  tags:
+    - Person
+  summary: "Create person"
+  operationId: createPerson
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreatePersonTO"
+  responses:
+    '201':
+      headers:
+        Location:
+          schema:
+            type: string
+          description: "Location of created person"
+      description: "Person created"

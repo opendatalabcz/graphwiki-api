@@ -1,0 +1,32 @@
+type: "object"
+required:
+  - id
+  - givenName
+  - familyName
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  givenName:
+    type: "string"
+    maxLength: 50
+  familyName:
+    type: "string"
+    maxLength: 50
+  dateOfBirth:
+    type: "string"
+    format: "date"
+  links:
+    type: "object"
+    required:
+      - self
+      - graph
+      - vertex
+    properties:
+      self:
+        $ref: "#/components/schemas/LinkTO"
+      graph:
+        $ref: "#/components/schemas/LinkTO"
+      vertex:
+        $ref: "#/components/schemas/LinkTO"

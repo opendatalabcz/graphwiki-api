@@ -1,0 +1,12 @@
+type: "object"
+required:
+  - search
+properties:
+  personCreate:
+    $ref: "#/components/schemas/LinkTO"
+  companyCreate:
+    $ref: "#/components/schemas/LinkTO"
+  relationshipCreate:
+    $ref: "#/components/schemas/LinkTO"
+  search:
+    $ref: "#/components/schemas/LinkTO"

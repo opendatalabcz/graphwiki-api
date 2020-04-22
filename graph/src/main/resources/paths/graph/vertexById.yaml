@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Graph
+  summary: "Get vertex with specific id"
+  operationId: findVertexById
+  parameters:
+    - $ref: "#/components/parameters/VertexIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/VertexTO"
+      description: "Vertex with specific id"

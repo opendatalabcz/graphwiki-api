@@ -1,0 +1,14 @@
+post:
+  tags:
+    - User
+  summary: "Register user"
+  operationId: create
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateUserTO"
+  responses:
+    '200':
+      description: "User registered"
+    '400':
+      description: "Passwords are not equals"
+    '422':
+      description: "User with provided username already exists"

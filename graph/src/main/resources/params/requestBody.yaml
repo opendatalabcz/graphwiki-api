@@ -1,0 +1,31 @@
+RQ_CreateCompanyTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateCompanyTO"
+  description: "New company value"
+
+RQ_CreatePersonTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreatePersonTO"
+  description: "New person value"
+
+RQ_CreateRelationshipTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateRelationshipTO"
+  description: "New relationship value"
+
+RQ_CreateComplaintTO:
+  required: true
+  content:
+    application/json:
+      schema:
+        $ref: "#/components/schemas/CreateComplaintTO"
+  description: "New complaint value"

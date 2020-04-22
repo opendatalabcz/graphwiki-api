@@ -1,0 +1,10 @@
+type: "object"
+properties:
+  taskInboxTeam:
+    $ref: "#/components/schemas/LinkTO"
+  taskInboxTeamWithAssigned:
+    $ref: "#/components/schemas/LinkTO"
+  taskInboxPrivate:
+    $ref: "#/components/schemas/LinkTO"
+  openTaskCount:
+    $ref: "#/components/schemas/LinkTO"

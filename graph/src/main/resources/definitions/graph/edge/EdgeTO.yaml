@@ -1,0 +1,27 @@
+type: "object"
+required:
+  - id
+  - source
+  - target
+  - label
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  source:
+    type: "string"
+    maxLength: 50
+  target:
+    type: "string"
+    maxLength: 50
+  label:
+    type: "string"
+    maxLength: 50
+  links:
+    type: "object"
+    required:
+      - self
+    properties:
+      self:
+        $ref: "#/components/schemas/LinkTO"

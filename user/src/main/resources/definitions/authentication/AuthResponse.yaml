@@ -1,0 +1,9 @@
+type: "object"
+required:
+  - token
+  - authInfo
+properties:
+  token:
+    type: "string"
+  authInfo:
+    $ref: "#/components/schemas/AuthInfo"

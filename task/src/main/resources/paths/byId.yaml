@@ -1,0 +1,35 @@
+get:
+  tags:
+    - Task
+  summary: "Get task with specific id"
+  operationId: findById
+  parameters:
+    - $ref: "#/components/parameters/TaskIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/TaskTO'
+      description: "Task with specific id"
+
+delete:
+  tags:
+    - Task
+  summary: "Finish task with specific id"
+  operationId: finish
+  parameters:
+    - $ref: "#/components/parameters/TaskIdPathParam"
+    - in: query
+      name: userId
+      required: true
+      schema:
+        type: string
+        maxLength: 50
+      description: "applicant user id"
+
+  responses:
+    '200':
+      description: "Task finished"
+    '422':
+      description: "Task is already finished or current user is not an assignee"

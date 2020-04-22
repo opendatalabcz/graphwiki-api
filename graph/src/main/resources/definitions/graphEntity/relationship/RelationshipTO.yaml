@@ -1,0 +1,20 @@
+allOf:
+  - $ref: '#/components/schemas/GraphEntityTO'
+  - type: "object"
+    required:
+      - type
+      - source
+      - target
+      - links
+    properties:
+      type:
+        $ref: "#/components/schemas/RelationshipType"
+      description:
+        type: "string"
+        maxLength: 200
+      source:
+        $ref: "#/components/schemas/VertexTO"
+      target:
+        $ref: "#/components/schemas/VertexTO"
+      links:
+        $ref: "#/components/schemas/RelationshipTOLinks"

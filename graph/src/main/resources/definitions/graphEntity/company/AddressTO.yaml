@@ -1,0 +1,25 @@
+type: "object"
+required:
+  - street
+  - houseNumber
+  - postalCode
+  - city
+  - country
+properties:
+  street:
+    type: "string"
+    maxLength: 50
+  houseNumber:
+    type: "string"
+    maxLength: 50
+  postalCode:
+    type: "string"
+    maxLength: 50
+  city:
+    type: "string"
+    maxLength: 50
+  country:
+    $ref: "#/components/schemas/Country"
+  landRegistryNumber:
+    type: "string"
+    maxLength: 50

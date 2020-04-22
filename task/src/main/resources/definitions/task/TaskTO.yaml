@@ -1,0 +1,39 @@
+type: "object"
+required:
+  - id
+  - entityLink
+  - state
+  - label
+  - type
+  - author
+  - created
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  label:
+    type: "string"
+    maxLength: 200
+  state:
+    $ref: "#/components/schemas/TaskState"
+  type:
+    $ref: "#/components/schemas/TaskType"
+  assignee:
+    $ref: "#/components/schemas/LinkTO"
+  links:
+    type: "object"
+    required:
+      - entity
+    properties:
+      assign:
+        $ref: "#/components/schemas/LinkTO"
+      unassign:
+        $ref: "#/components/schemas/LinkTO"
+      entity:
+        $ref: "#/components/schemas/LinkTO"

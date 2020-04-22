@@ -1,0 +1,18 @@
+put:
+  tags:
+    - EntityRequest
+  summary: "Assign entity request with specific id"
+  operationId: assignEntityRequest
+  parameters:
+    - $ref: "#/components/parameters/EntityRequestIdPathParam"
+    - in: query
+      name: assignee
+      schema:
+        type: string
+        maxLength: 50
+      description: "assignee id"
+  responses:
+    '200':
+      description: "Entity request assigned"
+    '422':
+      description: "Entity request is already assigned or it is in final state"

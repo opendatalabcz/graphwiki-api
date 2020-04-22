@@ -1,0 +1,13 @@
+type: "object"
+required:
+  - current
+  - historic
+properties:
+  current:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/ComplaintTO"
+  historic:
+    type: "array"
+    items:
+      $ref: "#/components/schemas/ComplaintTO"

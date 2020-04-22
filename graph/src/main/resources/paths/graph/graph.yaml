@@ -1,0 +1,14 @@
+get:
+  tags:
+    - Graph
+  summary: "Get graph with root vertex with specific id"
+  operationId: getGraph
+  parameters:
+    - $ref: "#/components/parameters/VertexIdQueryParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/GraphTO"
+      description: "Graph with root vertex with specific id"

@@ -1,0 +1,18 @@
+put:
+  tags:
+    - Complaint
+  summary: "Assign complaint with specific id"
+  operationId: assignComplaint
+  parameters:
+    - $ref: "#/components/parameters/ComplaintIdPathParam"
+    - in: query
+      name: assignee
+      schema:
+        type: string
+        maxLength: 50
+      description: "assignee id"
+  responses:
+    '200':
+      description: "Complaint assigned"
+    '422':
+      description: "Complaint is already assigned or it is in final state"

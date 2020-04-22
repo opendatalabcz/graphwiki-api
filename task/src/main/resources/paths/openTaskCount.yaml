@@ -1,0 +1,13 @@
+get:
+  tags:
+    - Task
+  summary: "Get open task count for current user"
+  operationId: openTaskCount
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: integer
+            format: int64
+      description: "Count of open tasks for current user"

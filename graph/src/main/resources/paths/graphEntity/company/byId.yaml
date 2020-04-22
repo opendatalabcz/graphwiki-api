@@ -1,0 +1,38 @@
+get:
+  tags:
+    - Company
+  summary: "Get company with specific id"
+  operationId: findCompanyById
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      content:
+        application/vnd.cz.gregetom.graphwiki.company+json:
+          schema:
+            $ref: "#/components/schemas/CompanyTO"
+      description: "Company with specific id"
+
+put:
+  tags:
+    - Company
+  summary: "Update company with specific id"
+  operationId: updateCompany
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateCompanyTO"
+  responses:
+    '200':
+      description: "Company updated"
+
+delete:
+  tags:
+    - Company
+  summary: "Delete company with specific id"
+  operationId: deleteCompany
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+  responses:
+    '200':
+      description: "Company deleted"

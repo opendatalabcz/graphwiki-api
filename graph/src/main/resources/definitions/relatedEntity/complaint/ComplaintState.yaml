@@ -1,0 +1,6 @@
+type: string
+enum:
+  - ADMIN_DECISION
+  - APPROVED
+  - REJECTED
+  - ENTITY_MODIFIED

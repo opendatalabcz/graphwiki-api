@@ -1,0 +1,27 @@
+type: "object"
+discriminator:
+  propertyName: "discriminator"
+required:
+  - id
+  - state
+  - author
+  - created
+  - informationSource
+  - informationSourceHost
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  state:
+    $ref: "#/components/schemas/GraphEntityState"
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  informationSource:
+    type: "string"
+    format: uri
+  informationSourceHost:
+    type: "string"
+    maxLength: 200

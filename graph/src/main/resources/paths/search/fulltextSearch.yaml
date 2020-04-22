@@ -1,0 +1,28 @@
+get:
+  tags:
+    - Search
+  summary: "Fulltext search"
+  operationId: fulltextSearch
+  parameters:
+    - in: query
+      name: query
+      required: true
+      schema:
+        type: string
+        minLength: 3
+        maxLength: 50
+      description: "search query"
+    - in: query
+      name: page
+      required: true
+      schema:
+        type: integer
+        minimum: 1
+      description: "page"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/SearchResult"
+      description: "Records matching query"

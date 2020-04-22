@@ -1,0 +1,16 @@
+put:
+  tags:
+    - Relationship
+  summary: "Change state of relationship with specific id"
+  operationId: relationshipStateTransition
+  parameters:
+    - $ref: "#/components/parameters/GraphEntityIdPathParam"
+    - in: query
+      name: nextState
+      required: true
+      schema:
+        $ref: "#/components/schemas/GraphEntityState"
+      description: "Next state"
+  responses:
+    '200':
+      description: "Relationship state changed"

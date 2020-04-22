@@ -1,0 +1,30 @@
+allOf:
+  - $ref: '#/components/schemas/GraphEntityTO'
+  - type: "object"
+    required:
+      - givenName
+      - familyName
+      - gender
+      - nationality
+      - informationSource
+      - informationSourceHost
+      - links
+    properties:
+      givenName:
+        type: "string"
+        maxLength: 50
+      familyName:
+        type: "string"
+        maxLength: 50
+      gender:
+        $ref: "#/components/schemas/Gender"
+      nationality:
+        $ref: "#/components/schemas/Country"
+      dateOfBirth:
+        type: "string"
+        format: "date"
+      occupation:
+        type: "string"
+        maxLength: 50
+      links:
+        $ref: "#/components/schemas/PersonTOLinks"

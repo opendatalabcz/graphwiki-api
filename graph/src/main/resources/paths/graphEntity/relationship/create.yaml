@@ -1,0 +1,17 @@
+post:
+  tags:
+    - Relationship
+  summary: "Create relationship"
+  operationId: createRelationship
+  requestBody:
+    $ref: "#/components/requestBodies/RQ_CreateRelationshipTO"
+  responses:
+    '201':
+      headers:
+        Location:
+          schema:
+            type: string
+          description: "Location of created relationship"
+      description: "Relationship created"
+    '422':
+      description: "Relationship source and target is the same entity"

@@ -1,0 +1,8 @@
+TaskIdPathParam:
+  in: path
+  name: id
+  required: true
+  schema:
+    type: string
+    maxLength: 50
+  description: "task id"

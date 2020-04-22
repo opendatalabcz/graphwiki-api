@@ -1,0 +1,17 @@
+type: "object"
+required:
+  - links
+properties:
+  links:
+    type: "object"
+    required:
+      - entity
+      - create
+      - related
+    properties:
+      entity:
+        $ref: "#/components/schemas/LinkTO"
+      create:
+        $ref: "#/components/schemas/LinkTO"
+      related:
+        $ref: "#/components/schemas/LinkTO"

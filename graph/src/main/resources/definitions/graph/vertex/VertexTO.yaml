@@ -1,0 +1,24 @@
+type: "object"
+required:
+  - id
+  - label
+  - type
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 50
+  label:
+    type: "string"
+    maxLength: 50
+  type:
+    $ref: "#/components/schemas/VertexType"
+  links:
+    type: "object"
+    required:
+      - self
+    properties:
+      self:
+        $ref: "#/components/schemas/LinkTO"
+      graph:
+        $ref: "#/components/schemas/LinkTO"

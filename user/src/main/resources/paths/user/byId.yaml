@@ -1,0 +1,14 @@
+get:
+  tags:
+    - User
+  summary: "Get user with specific id"
+  operationId: findById
+  parameters:
+    - $ref: "#/components/parameters/UserIdPathParam"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/UserTO'
+      description: "User with specific id"

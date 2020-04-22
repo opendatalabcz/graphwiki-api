@@ -1,0 +1,22 @@
+get:
+  tags:
+    - Task
+  summary: "Get team inbox tasks for current user"
+  operationId: teamInbox
+  parameters:
+    - in: query
+      name: showAssigned
+      required: true
+      schema:
+        type: boolean
+      description: "Indicates if assigned tasks will be included or not"
+  responses:
+    '200':
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '#/components/schemas/TaskTO'
+      description: "Team inbox tasks"
+

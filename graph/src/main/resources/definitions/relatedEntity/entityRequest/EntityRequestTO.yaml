@@ -1,0 +1,41 @@
+type: "object"
+required:
+  - id
+  - author
+  - created
+  - state
+  - links
+properties:
+  id:
+    type: "string"
+    maxLength: 36
+  author:
+    $ref: "#/components/schemas/LinkTO"
+  created:
+    type: "string"
+    format: "date-time"
+  assignee:
+    $ref: "#/components/schemas/LinkTO"
+  state:
+    $ref: "#/components/schemas/EntityRequestState"
+  links:
+    type: "object"
+    required:
+      - self
+      - entity
+      - commentList
+    properties:
+      self:
+        $ref: "#/components/schemas/LinkTO"
+      approve:
+        $ref: "#/components/schemas/LinkTO"
+      reject:
+        $ref: "#/components/schemas/LinkTO"
+      entity:
+        $ref: "#/components/schemas/LinkTO"
+      commentCreate:
+        $ref: "#/components/schemas/LinkTO"
+      commentList:
+        $ref: "#/components/schemas/LinkTO"
+      task:
+        $ref: "#/components/schemas/LinkTO"
