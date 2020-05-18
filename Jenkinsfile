@@ -1,12 +1,13 @@
-node {
+def PROJECT_GIT_REPOSITORY = 'https://github.com/opendatalabcz/graphwiki-api.git'
+def GIT_CREDENTIALS = 'github_GregerTomas'
 
+node {
   git(
-    url: 'https://github.com/opendatalabcz/graphwiki-api.git',
-    credentialsId: 'github_GregerTomas'
+      url: PROJECT_GIT_REPOSITORY,
+      credentialsId: GIT_CREDENTIALS
   )
 
   stage('MVN install') {
     sh 'mvn clean install'
   }
-
 }
