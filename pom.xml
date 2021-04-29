@@ -27,7 +27,7 @@
         <node-install-directory>${project.parent.basedir}</node-install-directory>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.api.merger.class>cz.gregetom.graphwiki.api.ApiMerger</project.api.merger.class>
-        <openapi-generator.version>4.3.0</openapi-generator.version>
+        <openapi-generator.version>5.1.0</openapi-generator.version>
     </properties>
 
     <dependencies>
